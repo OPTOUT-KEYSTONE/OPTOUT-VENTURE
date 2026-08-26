@@ -6,44 +6,66 @@ import { SITE } from '@/site.config';
 const tools = ['TypeScript', 'Astro', 'React', 'Figma', 'Tailwind CSS', 'Node.js'];
 ---
 
-<BaseLayout title="About" description={`A bit about ${SITE.name} and how they work.`}>
+<BaseLayout title="About" description={`About ${SITE.name} — Bangalore-based product venture studio.`}>
   <section class="mx-auto max-w-3xl px-6 pt-16 pb-24 sm:pt-24">
-    <p class="text-ink-soft mb-6 font-mono text-xs tracking-[0.2em] uppercase">About</p>
+    <p class="text-ink-soft mb-6 font-mono text-xs tracking-[0.2em] uppercase">About Us</p>
 
     <h1 class="font-display text-ink max-w-xl text-3xl font-medium sm:text-4xl">
-      {SITE.role}.
+      Building digital products out of Bangalore, India.
     </h1>
 
-    <div class="prose prose-sm sm:prose-base mt-8 max-w-xl">
+    <div class="prose prose-sm sm:prose-base text-ink-soft mt-8 max-w-2xl space-y-4">
       <p>
-        I start most projects by trying to find the smallest version of the problem — the one
-        screen, one flow, or one fix that actually matters — and build that first, properly, before
-        expanding outward.
-      </p>
-      <p>
-        That usually means fewer features than a kickoff deck promises, and more attention to the
-        parts people interact with constantly: load times, empty states, error messages, the things
-        that quietly decide whether software feels good to use.
-      </p>
-      <p>
-        Outside of client and product work, I maintain a couple of small open-source tools and write
-        occasional notes on what I learn building them.
+        Optout Keystone is a product venture studio focused on designing, building, and launching practical digital software solutions. We focus on solving real operational problems with clean architecture, speed, and real-world utility.
       </p>
     </div>
 
-    <div class="mt-10">
-      <p class="text-ink-soft mb-3 font-mono text-xs tracking-[0.2em] uppercase">Tools</p>
-      <ul class="flex flex-wrap gap-2">
-        {
-          tools.map((tool) => (
-            <li class="border-line text-ink-soft rounded-full border px-3 py-1 font-mono text-xs">
-              {tool}
-            </li>
-          ))
-        }
-      </ul>
+    <!-- Leadership / Team Section -->
+    <div class="mt-14">
+      <p class="text-ink-soft mb-6 font-mono text-xs tracking-[0.2em] uppercase">Leadership</p>
+
+      <div class="grid gap-8 sm:grid-cols-2">
+        <div class="border-line rounded-lg border p-6">
+          <div class="flex items-center justify-between">
+            <h2 class="font-display text-ink text-xl font-medium">Suraj Raika</h2>
+            <a
+              href="https://www.linkedin.com/in/surajraika/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-signal hover:underline font-mono text-xs"
+            >
+              LinkedIn ↗
+            </a>
+          </div>
+          <p class="text-signal mt-1 font-mono text-xs">Chief Executive Officer</p>
+          <p class="text-ink-soft mt-4 text-sm leading-relaxed">
+            With 7+ years of hands-on experience in the technology industry, Suraj leads strategy, product vision, and engineering execution across our product portfolio.
+          </p>
+        </div>
+
+        <div class="border-line rounded-lg border p-6">
+          <h2 class="font-display text-ink text-xl font-medium">Yash Hatwal</h2>
+          <p class="text-signal mt-1 font-mono text-xs">Head of Marketing & Sales</p>
+          <p class="text-ink-soft mt-4 text-sm leading-relaxed">
+            Bringing 4+ years of experience working with diverse brands across growth, marketing, and sales strategies to drive product distribution and market adoption.
+          </p>
+        </div>
+      </div>
     </div>
 
-    <Button href={`mailto:${SITE.email}`} class="mt-10">Get in touch</Button>
+    <!-- Location & Contact -->
+    <div class="border-line mt-14 border-t pt-8">
+      <p class="text-ink-soft mb-2 font-mono text-xs tracking-[0.2em] uppercase">Location & Contact</p>
+      <p class="text-ink text-sm font-medium">Bangalore, India</p>
+      <div class="mt-4 flex flex-wrap gap-4 font-mono text-xs">
+        <a href="mailto:info@aftermeet.io" class="text-signal hover:underline">info@aftermeet.io</a>
+        <span class="text-ink-soft">·</span>
+        <a href="mailto:sales@aftermeet.io" class="text-signal hover:underline">sales@aftermeet.io</a>
+        <span class="text-ink-soft">·</span>
+        <a href="https://www.linkedin.com/company/expodiary/" target="_blank" rel="noopener noreferrer" class="text-signal hover:underline">LinkedIn ↗</a>
+      </div>
+    </div>
+
+    <Button href="mailto:info@aftermeet.io" class="mt-10">Get in touch</Button>
   </section>
 </BaseLayout>

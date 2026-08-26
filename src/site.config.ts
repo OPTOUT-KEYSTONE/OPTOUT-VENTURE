@@ -1,22 +1,20 @@
-// Edit this file to re-label the entire site. Header, Footer, the homepage
-// and SEO defaults all read from here instead of hardcoding copy.
+// Site-wide content and navigation
 export const SITE = {
-  name: 'John Doe',
-  role: 'Product design & frontend engineering',
-  email: 'johndoe@example.com',
-  tagline: 'I design and build interfaces that hold up under real use.',
+  name: 'OPTOUT KEYSTONE',
+  role: 'Product Studio & Technology Venture',
+  email: 'info@aftermeet.io',
+  location: 'Bangalore, India',
+  tagline: 'We design and build products that hold up under real use.',
   description:
-    'Portfolio of John Doe — product design and frontend engineering, with an emphasis on speed, clarity, and the details most people skip.',
-  status: 'Currently building at Studio Co · open to new work, Q3 2026',
+    'Optout Keystone — building thoughtful digital products out of Bangalore with an emphasis on speed, clarity, and real-world utility.',
+  status: 'Currently building new products · open to new opportunities',
   social: [
-    { label: 'GitHub', href: 'https://github.com/your-username' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/your-username' },
-    { label: 'X', href: 'https://x.com/your-username' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/expodiary/' },
   ],
   locale: 'en',
 } as const;
 
 export const NAV_LINKS = [
-  { label: 'Work', href: '/work' },
+  { label: 'Products', href: '/products' },
   { label: 'About', href: '/about' },
 ] as const;

@@ -4,7 +4,6 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import Button from '@/components/Button.astro';
 import WorkRow from '@/components/WorkRow.astro';
 import SectionHeading from '@/components/SectionHeading.astro';
-import { SITE } from '@/site.config';
 
 const allWork = await getCollection('work', ({ data }) => !data.draft);
 const sorted = [...allWork].sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
@@ -13,40 +12,41 @@ const rest = sorted.filter((entry) => !entry.data.featured);
 const selected = [...featured, ...rest].slice(0, 5);
 ---
 
-<BaseLayout title={SITE.name}>
+<BaseLayout title="OPTOUT KEYSTONE">
   <section class="mx-auto max-w-3xl px-6 pt-16 pb-20 sm:pt-24">
     <p class="text-ink-soft mb-6 inline-flex items-center gap-2 font-mono text-xs">
       <span class="bg-signal h-1.5 w-1.5 rounded-full" aria-hidden="true"></span>
-      {SITE.status}
+      Currently building new products · open to new opportunities, Q3 2026
     </p>
 
     <h1 class="font-display text-ink max-w-2xl text-4xl leading-[1.1] font-medium sm:text-5xl">
-      {SITE.tagline}
+      We design and build products that hold up under real use.
     </h1>
-
-    <p class="text-ink-soft mt-6 max-w-md">
-      {SITE.role} — based on the work below, not a list of buzzwords.
-    </p>
+<p class="text-ink-soft mt-6 max-w-md">
+  We build, break, and refine until we find what works — products you never knew you needed.
+</p>
 
     <div class="mt-8 flex flex-wrap items-center gap-3">
-      <Button href="/work" variant="solid">View the work →</Button>
+      <Button href="/products" variant="solid">View our products →</Button>
       <Button href="#contact" variant="ghost">Say hello</Button>
     </div>
   </section>
 
-  <section id="work" class="mx-auto max-w-3xl px-6 pb-20">
-    <SectionHeading eyebrow="Selected work" count={allWork.length} />
+  <section id="products" class="mx-auto max-w-3xl px-6 pb-20">
+    <SectionHeading eyebrow="Selected products" count={allWork.length} />
+
     <div>
       {selected.map((entry) => <WorkRow entry={entry} />)}
     </div>
+
     {
       allWork.length > selected.length && (
         <div class="mt-6">
           <a
-            href="/work"
+            href="/products"
             class="text-ink-soft hover:text-signal font-mono text-xs transition-colors"
           >
-            View all {allWork.length} projects →
+            View all {allWork.length} products →
           </a>
         </div>
       )
@@ -55,24 +55,55 @@ const selected = [...featured, ...rest].slice(0, 5);
 
   <section id="about" class="mx-auto max-w-3xl px-6 pb-20">
     <SectionHeading eyebrow="About" />
+
     <p class="text-ink-soft max-w-xl">
-      {SITE.description}
+      Optout Keystone builds thoughtful digital products with an emphasis on
+      speed, clarity, and the details that make products work better in the
+      real world.
     </p>
-    <a href="/about" class="text-signal mt-4 inline-block font-mono text-xs hover:underline">
-      More about how I work →
+
+    <a
+      href="/about"
+      class="text-signal mt-4 inline-block font-mono text-xs hover:underline"
+    >
+      More about Optout Keystone →
     </a>
   </section>
 
   <section id="contact" class="mx-auto max-w-3xl px-6 pb-24">
     <SectionHeading eyebrow="Let's talk" />
+
     <p class="font-display text-ink max-w-lg text-2xl sm:text-3xl">
       Have something worth building?
     </p>
-    <a
-      href={`mailto:${SITE.email}`}
-      class="text-signal mt-4 inline-flex items-center gap-2 font-mono hover:underline"
-    >
-      {SITE.email}
-    </a>
+
+    <p class="text-ink-soft mt-2 text-sm">
+      Based out of Bangalore, India.
+    </p>
+
+    <div class="mt-6 flex flex-col gap-3 font-mono text-xs">
+      <div>
+        <span class="text-ink-soft">General Inquiries: </span>
+        <a
+          href="mailto:info@aftermeet.io"
+          class="text-signal hover:underline"
+        >
+          info@aftermeet.io
+        </a>
+      </div>
+      <div>
+        <span class="text-ink-soft">Sales & Marketing: </span>
+        <a
+          href="mailto:sales@aftermeet.io"
+          class="text-signal hover:underline"
+        >
+          sales@aftermeet.io
+        </a>
+      </div>
+      <div class="hidden">
+        <span class="text-ink-soft">CEO: </span>
+        <span class="text-ink">Suraj Raika</span> (<a href="https://www.linkedin.com/in/surajraika/" target="_blank" rel="noopener noreferrer" class="text-signal hover:underline">LinkedIn</a>)
+      </div>
+    </div>
   </section>
 </BaseLayout>

@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import WorkRow from '@/components/WorkRow.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+
+const allProducts = (await getCollection('products', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<BaseLayout
+  title="Products"
+  description="Products currently being built by Optout Keystone."
+>
+  <section class="mx-auto max-w-3xl px-6 pt-16 pb-24 sm:pt-24">
+    <SectionHeading eyebrow="Products" count={allProducts.length} />
+
+    <p class="text-ink-soft mt-6 max-w-xl">
+      Products we're building, breaking, and refining until we find something worth keeping.
+    </p>
+
+    <div class="mt-10">
+      {allProducts.map((entry) => <WorkRow entry={entry} />)}
+    </div>
+  </section>
+</BaseLayout>

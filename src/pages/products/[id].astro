@@ -1,0 +1,73 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Button from '@/components/Button.astro';
+import { formatDate } from '@/utils/formatDate';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('products', ({ data }) => !data.draft);
+
+  return entries.map((entry) => ({
+    params: { id: entry.id },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'products'>;
+}
+
+const { entry } = Astro.props;
+
+const { title, summary, status, date, tags, url } = entry.data;
+
+const { Content } = await render(entry);
+
+const formattedDate = formatDate(date);
+---
+
+<BaseLayout title={title} description={summary}>
+  <article class="mx-auto max-w-3xl px-6 pt-16 pb-24 sm:pt-24">
+    <a
+      href="/products"
+      class="text-ink-soft hover:text-signal font-mono text-xs transition-colors"
+    >
+      ← All products
+    </a>
+
+    <h1 class="font-display text-ink mt-6 max-w-2xl text-3xl font-medium sm:text-4xl">
+      {title}
+    </h1>
+
+    <div class="border-line text-ink-soft mt-6 border-y py-4 font-mono text-xs">
+      <span class="inline-flex items-center gap-2">
+        <span class="bg-signal h-2 w-2 rounded-full"></span>
+        Launching soon
+      </span>
+    </div>
+
+    <div class="text-ink-soft mt-8 max-w-2xl text-lg leading-relaxed">
+      {summary}
+    </div>
+
+    <div class="prose prose-sm sm:prose-base mt-6 max-w-2xl">
+      <Content />
+    </div>
+
+    <div class="border-line mt-12 border-t pt-8">
+      <h3 class="font-display text-ink text-lg font-medium">Contact us for inquiries</h3>
+      <p class="text-ink-soft mt-2 text-sm">
+        For inquiries, reach out to us at:
+      </p>
+      <div class="mt-4 flex flex-col gap-2 font-mono text-xs">
+        <a href="mailto:info@aftermeet.io" class="text-signal hover:underline">
+          info@aftermeet.io
+        </a>
+        <a href="mailto:sales@aftermeet.io" class="text-signal hover:underline">
+          sales@aftermeet.io
+        </a>
+       
+      </div>
+    </div>
+  </article>
+</BaseLayout>
