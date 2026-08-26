@@ -13,7 +13,12 @@ const year = new Date().getFullYear();
     <nav class="flex items-center gap-4" aria-label="Social">
       {
         SITE.social.map((link) => (
-          <a href={link.href} class="hover:text-signal transition-colors" rel="noopener noreferrer" target="_blank">
+          <a
+            href={link.href}
+            class="hover:text-signal transition-colors"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             {link.label}
           </a>
         ))

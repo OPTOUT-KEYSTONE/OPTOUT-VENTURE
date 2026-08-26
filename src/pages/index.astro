@@ -5,7 +5,7 @@ import Button from '@/components/Button.astro';
 import WorkRow from '@/components/WorkRow.astro';
 import SectionHeading from '@/components/SectionHeading.astro';
 
-const allWork = await getCollection('work', ({ data }) => !data.draft);
+const allWork = await getCollection('products', ({ data }) => !data.draft);
 const sorted = [...allWork].sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 const featured = sorted.filter((entry) => entry.data.featured);
 const rest = sorted.filter((entry) => !entry.data.featured);
@@ -22,9 +22,9 @@ const selected = [...featured, ...rest].slice(0, 5);
     <h1 class="font-display text-ink max-w-2xl text-4xl leading-[1.1] font-medium sm:text-5xl">
       We design and build products that hold up under real use.
     </h1>
-<p class="text-ink-soft mt-6 max-w-md">
-  We build, break, and refine until we find what works — products you never knew you needed.
-</p>
+    <p class="text-ink-soft mt-6 max-w-md">
+      We build, break, and refine until we find what works — products you never knew you needed.
+    </p>
 
     <div class="mt-8 flex flex-wrap items-center gap-3">
       <Button href="/products" variant="solid">View our products →</Button>
@@ -57,15 +57,11 @@ const selected = [...featured, ...rest].slice(0, 5);
     <SectionHeading eyebrow="About" />
 
     <p class="text-ink-soft max-w-xl">
-      Optout Keystone builds thoughtful digital products with an emphasis on
-      speed, clarity, and the details that make products work better in the
-      real world.
+      Optout Keystone builds thoughtful digital products with an emphasis on speed, clarity, and the
+      details that make products work better in the real world.
     </p>
 
-    <a
-      href="/about"
-      class="text-signal mt-4 inline-block font-mono text-xs hover:underline"
-    >
+    <a href="/about" class="text-signal mt-4 inline-block font-mono text-xs hover:underline">
       More about Optout Keystone →
     </a>
   </section>
@@ -77,32 +73,29 @@ const selected = [...featured, ...rest].slice(0, 5);
       Have something worth building?
     </p>
 
-    <p class="text-ink-soft mt-2 text-sm">
-      Based out of Bangalore, India.
-    </p>
+    <p class="text-ink-soft mt-2 text-sm">Based out of Bangalore, India.</p>
 
     <div class="mt-6 flex flex-col gap-3 font-mono text-xs">
       <div>
         <span class="text-ink-soft">General Inquiries: </span>
-        <a
-          href="mailto:info@aftermeet.io"
-          class="text-signal hover:underline"
-        >
+        <a href="mailto:info@aftermeet.io" class="text-signal hover:underline">
           info@aftermeet.io
         </a>
       </div>
       <div>
         <span class="text-ink-soft">Sales & Marketing: </span>
-        <a
-          href="mailto:sales@aftermeet.io"
-          class="text-signal hover:underline"
-        >
+        <a href="mailto:sales@aftermeet.io" class="text-signal hover:underline">
           sales@aftermeet.io
         </a>
       </div>
       <div class="hidden">
         <span class="text-ink-soft">CEO: </span>
-        <span class="text-ink">Suraj Raika</span> (<a href="https://www.linkedin.com/in/surajraika/" target="_blank" rel="noopener noreferrer" class="text-signal hover:underline">LinkedIn</a>)
+        <span class="text-ink">Suraj Raika</span> (<a
+          href="https://www.linkedin.com/in/surajraika/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-signal hover:underline">LinkedIn</a
+        >)
       </div>
     </div>
   </section>
