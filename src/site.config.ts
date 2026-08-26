@@ -8,9 +8,7 @@ export const SITE = {
   description:
     'Optout Keystone — building thoughtful digital products out of Bangalore with an emphasis on speed, clarity, and real-world utility.',
   status: 'Currently building new products · open to new opportunities',
-  social: [
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/expodiary/' },
-  ],
+  social: [{ label: 'LinkedIn', href: 'https://www.linkedin.com/company/expodiary/' }],
   locale: 'en',
 } as const;
 

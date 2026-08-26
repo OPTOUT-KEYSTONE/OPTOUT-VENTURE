@@ -2,11 +2,12 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Button from '@/components/Button.astro';
 import { SITE } from '@/site.config';
-
-const tools = ['TypeScript', 'Astro', 'React', 'Figma', 'Tailwind CSS', 'Node.js'];
 ---
 
-<BaseLayout title="About" description={`About ${SITE.name} — Bangalore-based product venture studio.`}>
+<BaseLayout
+  title="About"
+  description={`About ${SITE.name} — Bangalore-based product venture studio.`}
+>
   <section class="mx-auto max-w-3xl px-6 pt-16 pb-24 sm:pt-24">
     <p class="text-ink-soft mb-6 font-mono text-xs tracking-[0.2em] uppercase">About Us</p>
 
@@ -16,7 +17,9 @@ const tools = ['TypeScript', 'Astro', 'React', 'Figma', 'Tailwind CSS', 'Node.js
 
     <div class="prose prose-sm sm:prose-base text-ink-soft mt-8 max-w-2xl space-y-4">
       <p>
-        Optout Keystone is a product venture studio focused on designing, building, and launching practical digital software solutions. We focus on solving real operational problems with clean architecture, speed, and real-world utility.
+        Optout Keystone is a product venture studio focused on designing, building, and launching
+        practical digital software solutions. We focus on solving real operational problems with
+        clean architecture, speed, and real-world utility.
       </p>
     </div>
 
@@ -32,14 +35,15 @@ const tools = ['TypeScript', 'Astro', 'React', 'Figma', 'Tailwind CSS', 'Node.js
               href="https://www.linkedin.com/in/surajraika/"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-signal hover:underline font-mono text-xs"
+              class="text-signal font-mono text-xs hover:underline"
             >
               LinkedIn ↗
             </a>
           </div>
           <p class="text-signal mt-1 font-mono text-xs">Chief Executive Officer</p>
           <p class="text-ink-soft mt-4 text-sm leading-relaxed">
-            With 7+ years of hands-on experience in the technology industry, Suraj leads strategy, product vision, and engineering execution across our product portfolio.
+            With 7+ years of hands-on experience in the technology industry, Suraj leads strategy,
+            product vision, and engineering execution across our product portfolio.
           </p>
         </div>
 
@@ -47,7 +51,8 @@ const tools = ['TypeScript', 'Astro', 'React', 'Figma', 'Tailwind CSS', 'Node.js
           <h2 class="font-display text-ink text-xl font-medium">Yash Hatwal</h2>
           <p class="text-signal mt-1 font-mono text-xs">Head of Marketing & Sales</p>
           <p class="text-ink-soft mt-4 text-sm leading-relaxed">
-            Bringing 4+ years of experience working with diverse brands across growth, marketing, and sales strategies to drive product distribution and market adoption.
+            Bringing 4+ years of experience working with diverse brands across growth, marketing,
+            and sales strategies to drive product distribution and market adoption.
           </p>
         </div>
       </div>
@@ -55,14 +60,23 @@ const tools = ['TypeScript', 'Astro', 'React', 'Figma', 'Tailwind CSS', 'Node.js
 
     <!-- Location & Contact -->
     <div class="border-line mt-14 border-t pt-8">
-      <p class="text-ink-soft mb-2 font-mono text-xs tracking-[0.2em] uppercase">Location & Contact</p>
+      <p class="text-ink-soft mb-2 font-mono text-xs tracking-[0.2em] uppercase">
+        Location & Contact
+      </p>
       <p class="text-ink text-sm font-medium">Bangalore, India</p>
       <div class="mt-4 flex flex-wrap gap-4 font-mono text-xs">
         <a href="mailto:info@aftermeet.io" class="text-signal hover:underline">info@aftermeet.io</a>
         <span class="text-ink-soft">·</span>
-        <a href="mailto:sales@aftermeet.io" class="text-signal hover:underline">sales@aftermeet.io</a>
+        <a href="mailto:sales@aftermeet.io" class="text-signal hover:underline"
+          >sales@aftermeet.io</a
+        >
         <span class="text-ink-soft">·</span>
-        <a href="https://www.linkedin.com/company/expodiary/" target="_blank" rel="noopener noreferrer" class="text-signal hover:underline">LinkedIn ↗</a>
+        <a
+          href="https://www.linkedin.com/company/expodiary/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-signal hover:underline">LinkedIn ↗</a
+        >
       </div>
     </div>
 
